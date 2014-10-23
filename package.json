@@ -1,0 +1,11 @@
+{
+  "name": "heroku-production-check",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Jeff Dickey @dickeyxxx",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.46.0"
+  }
+}
