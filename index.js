@@ -27,7 +27,6 @@ exports.help = function (command) {
 //              "token": "theapitoken",
 //            }
 exports.run = function (command, args, flags, context) {
-  console.log('running')
   request({
     uri: 'https://production-check-api.herokuapp.com/production-checks/'+context.app,
     headers: {
@@ -35,9 +34,8 @@ exports.run = function (command, args, flags, context) {
     },
     json: true
   }, function (err, check) {
-    if (err) { return console.log(err.body.message) }
+    if (err) { console.log(err) }
     console.log("TODO: print pretty output of production check")
-    console.log(check)
   })
 }
 
