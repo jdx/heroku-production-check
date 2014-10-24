@@ -1,5 +1,5 @@
 {
-  "name": "heroku-production-check",
+  "name": "@heroku/production-check",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
