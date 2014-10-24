@@ -35,7 +35,7 @@ exports.run = function (command, args, flags, context) {
     },
     json: true
   }, function (err, check) {
-    if (err) { throw err }
+    if (err) { console.log(err.body.message) }
     console.log("TODO: print pretty output of production check")
     console.log(check)
   })
