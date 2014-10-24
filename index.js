@@ -31,7 +31,7 @@ exports.run = function (command, args, flags, context) {
   request({
     uri: 'https://production-check-api.herokuapp.com/production-checks/'+context.app,
     headers: {
-      Authorization: context.token
+      Authorization: "Basic " + context.token
     },
     json: true
   }, function (err, check) {
