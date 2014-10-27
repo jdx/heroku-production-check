@@ -19,23 +19,19 @@ exports.commands = {
       //              "token": "theapitoken",
       //            }
       run: function (args, flags, context) {
-        getStatusChecks(context.app, context.token)
+        request({
+          uri: 'https://production-check-api.herokuapp.com/production-checks/'+context.app,
+          auth: {user: '', password: context.token},
+          json: true
+        }, function (err, _, checks) {
+          if (err) { throw err }
+          Object.keys(checks).forEach(function (key) {
+            printStatusCheck(checks[key])
+          })
+        })
       }
     }
   }
-}
-
-function getStatusChecks(app, token) {
-  request({
-    uri: 'https://production-check-api.herokuapp.com/production-checks/'+app,
-    auth: {user: '', password: token},
-    json: true
-  }, function (err, _, checks) {
-    if (err) { throw err }
-    Object.keys(checks).forEach(function (key) {
-      printStatusCheck(checks[key])
-    })
-  })
 }
 
 function printStatusCheck(check) {
