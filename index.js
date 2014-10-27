@@ -5,10 +5,10 @@ exports.commands = {
   apps: {
     status: {
       shortHelp: 'get status of a production app',
-      help: 'Get the status of a production app. Shows information about stuff. \
-      Examples: \
-      $ heroku heroku-production-check \
-      Status: green',
+      help: "Get the status of a production app.\n\
+Examples:\n\
+  $ heroku heroku-production-check\n\
+  Status: green",
 
       // Called with heroku heroku-production-check
       //      args: All arguments after heroku topic:command
