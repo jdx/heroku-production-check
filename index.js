@@ -57,7 +57,7 @@ function printStatusCheck(check) {
       break
   }
   console.log('%s %s', check.title.yellow, color(icon))
-  console.log('  %s\n', check.devCenterURL)
+  console.log('  %s\n', check.devCenterURL.underline)
 
   if (check.message) {
     console.log(color('  ' + check.message))
