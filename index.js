@@ -29,7 +29,7 @@ Examples:\n\
         run: function (context) {
           request({
             uri: 'https://production-check-api.herokuapp.com/production-checks/'+context.app,
-            auth: context.auth,
+            auth: {user: "", password: context.auth.password},
             json: true
           }, function (err, _, checks) {
             if (err) { throw err }
