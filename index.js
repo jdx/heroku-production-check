@@ -4,6 +4,7 @@ var colors = require('colors')
 exports.commands = {
   apps: {
     status: {
+      signature: 'apps:status',
       shortHelp: 'get status of a production app',
       help: "\
 Get the status of a production app.\n\
