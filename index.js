@@ -10,11 +10,11 @@ exports.topics = [
         signature: 'apps:status',
         shortHelp: 'get status of a production app',
         help: "\
-        Get the status of a production app.\n\
-        \n\
-        Examples:\n\
-        $ heroku heroku-production-check\n\
-        Status: green",
+Get the status of a production app.\n\
+\n\
+Examples:\n\
+  $ heroku heroku-production-check\n\
+  Status: green",
 
         // Called with heroku heroku-production-check
         //      args: All arguments after heroku topic:command
