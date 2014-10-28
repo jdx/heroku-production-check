@@ -26,10 +26,10 @@ Examples:\n\
         //              "app": "shielded-chamber-4849",
         //              "token": "theapitoken",
         //            }
-        run: function (context, args, flags) {
+        run: function (context) {
           request({
             uri: 'https://production-check-api.herokuapp.com/production-checks/'+context.app,
-            auth: {user: '', password: context.token},
+            auth: context.auth,
             json: true
           }, function (err, _, checks) {
             if (err) { throw err }
