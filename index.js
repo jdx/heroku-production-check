@@ -9,6 +9,8 @@ exports.topics = [
         name: 'status',
         signature: 'apps:status',
         shortHelp: 'get status of a production app',
+        needsApp: true,
+        needsToken: true,
         help: "\
 Get the status of a production app.\n\
 \n\
