@@ -1,41 +1,45 @@
 var request = require('request')
 var colors = require('colors')
 
-exports.commands = {
-  apps: {
-    status: {
-      signature: 'apps:status',
-      shortHelp: 'get status of a production app',
-      help: "\
-Get the status of a production app.\n\
-\n\
-Examples:\n\
-  $ heroku heroku-production-check\n\
-  Status: green",
+exports.topics = [
+  {
+    name: 'apps',
+    commands: [
+      {
+        name: 'status',
+        signature: 'apps:status',
+        shortHelp: 'get status of a production app',
+        help: "\
+        Get the status of a production app.\n\
+        \n\
+        Examples:\n\
+        $ heroku heroku-production-check\n\
+        Status: green",
 
-      // Called with heroku heroku-production-check
-      //      args: All arguments after heroku topic:command
-      //     flags: Any flags passed by the CLI
-      //   context: The Heroku context object which would be something like this:
-      //            {
-      //              "app": "shielded-chamber-4849",
-      //              "token": "theapitoken",
-      //            }
-      run: function (args, flags, context) {
-        request({
-          uri: 'https://production-check-api.herokuapp.com/production-checks/'+context.app,
-          auth: {user: '', password: context.token},
-          json: true
-        }, function (err, _, checks) {
-          if (err) { throw err }
-          Object.keys(checks).forEach(function (key) {
-            printStatusCheck(checks[key])
+        // Called with heroku heroku-production-check
+        //      args: All arguments after heroku topic:command
+        //     flags: Any flags passed by the CLI
+        //   context: The Heroku context object which would be something like this:
+        //            {
+        //              "app": "shielded-chamber-4849",
+        //              "token": "theapitoken",
+        //            }
+        run: function (args, flags, context) {
+          request({
+            uri: 'https://production-check-api.herokuapp.com/production-checks/'+context.app,
+            auth: {user: '', password: context.token},
+            json: true
+          }, function (err, _, checks) {
+            if (err) { throw err }
+            Object.keys(checks).forEach(function (key) {
+              printStatusCheck(checks[key])
+            })
           })
-        })
+        }
       }
-    }
+    ]
   }
-}
+]
 
 function printStatusCheck(check) {
   var color = colors.white
