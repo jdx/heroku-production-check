@@ -19,12 +19,11 @@ Examples:\n\
   Status: green",
 
         // Called with heroku heroku-production-check
-        //      args: All arguments after heroku topic:command
-        //     flags: Any flags passed by the CLI
         //   context: The Heroku context object which would be something like this:
         //            {
         //              "app": "shielded-chamber-4849",
         //              "token": "theapitoken",
+        //              "args": {} // arguments passed
         //            }
         run: function (context) {
           request({
