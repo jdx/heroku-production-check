@@ -22,7 +22,7 @@ Examples:\n\
         //   context: The Heroku context object which would be something like this:
         //            {
         //              "app": "shielded-chamber-4849",
-        //              "token": "theapitoken",
+        //              "auth": { "user": "username", "password": "theapitoken"},
         //              "args": {} // arguments passed
         //            }
         run: function (context) {
