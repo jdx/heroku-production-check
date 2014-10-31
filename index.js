@@ -33,6 +33,7 @@ Examples:\n\
             json: true
           }, function (err, _, checks) {
             if (err) { throw err }
+            if (checks.message) { return console.error(checks.message) }
             Object.keys(checks).forEach(function (key) {
               printStatusCheck(checks[key])
             })
