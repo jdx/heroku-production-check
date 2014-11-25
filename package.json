@@ -1,6 +1,6 @@
 {
   "name": "heroku-production-check",
-  "version": "2.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "author": "Jeff Dickey @dickeyxxx",
@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "colors": "^1.0.3",
-    "request": "^2.46.0"
+    "request": "^2.48.0"
   },
   "devDependencies": {
     "netrc": "^0.1.3"
