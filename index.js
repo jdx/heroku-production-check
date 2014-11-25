@@ -7,7 +7,6 @@ exports.topics = [
     commands: [
       {
         name: 'status',
-        signature: 'apps:status',
         shortHelp: 'get status of a production app',
         needsApp: true,
         needsAuth: true,
