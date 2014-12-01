@@ -1,4 +1,7 @@
-var request = require('request')
+var api = require('request').defaults({
+  json: true,
+  headers: { 'Accept': 'application/vnd.heroku+json; version=edge' }
+})
 var colors = require('colors')
 
 exports.topics = [
@@ -25,7 +28,8 @@ Examples:\n\
         //              "args": {} // arguments passed
         //            }
         run: function (context) {
-          request({
+          api = api.defaults({auth: context.auth})
+          api.get({
             uri: 'https://production-check-api.herokuapp.com/production-checks/'+context.app,
             auth: {user: "", password: context.auth.password},
             json: true
