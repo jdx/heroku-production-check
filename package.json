@@ -1,6 +1,6 @@
 {
   "name": "heroku-production-check",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Heroku plugin to check to see if a Heroku app is production ready",
   "main": "index.js",
   "author": "Jeff Dickey @dickeyxxx",
@@ -16,13 +16,14 @@
   ],
   "license": "ISC",
   "scripts": {
-    "test": "node test.js"
+    "test": "jshint . && node test.js"
   },
   "dependencies": {
     "colors": "^1.0.3",
     "request": "^2.48.0"
   },
   "devDependencies": {
+    "jshint": "^2.5.10",
     "netrc": "^0.1.3"
   }
 }
