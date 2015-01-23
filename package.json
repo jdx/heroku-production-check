@@ -1,6 +1,6 @@
 {
   "name": "heroku-production-check",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Heroku plugin to check to see if a Heroku app is production ready",
   "main": "index.js",
   "author": "Jeff Dickey @dickeyxxx",
