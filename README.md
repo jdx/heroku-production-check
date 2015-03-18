@@ -1,4 +1,11 @@
 heroku-production-check plugin
 ==============================
 
-[![Build Status](https://travis-ci.org/dickeyxxx/heroku-production-check.svg?branch=master)](https://travis-ci.org/dickeyxxx/heroku-production-check)
+Checks an app for various production-ready checks.
+
+Usage:
+
+```
+$ heroku plugins:install heroku-production-check
+$ heroku apps:status -a APPNAME
+```
